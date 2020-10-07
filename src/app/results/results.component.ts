@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges} from '@angular/core';
 import { User } from '../models/user.model';
 import { RandomUserService } from '../service/random-user.service';
 
@@ -7,15 +7,17 @@ import { RandomUserService } from '../service/random-user.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css'],
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnChanges {
   public users: User[] = [];
   public user: User;
+  public number:string;
 
-  @Input() numberOfUsers;
+  @Input() numberOfUsers:string;
 
   constructor(public service: RandomUserService) {}
 
-  ngOnInit(): void {
+  ngOnChanges(){
+    this.users.length=0;
     this.service
       .getInformation(this.numberOfUsers)
       .subscribe((res) => this.getDataUsers(res));
@@ -35,6 +37,5 @@ export class ResultsComponent implements OnInit {
       );
       this.users.push(this.user);
     }
-    console.log(this.users);
   }
 }
