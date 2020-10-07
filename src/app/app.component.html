@@ -7,20 +7,24 @@
       <table class="table table-striped text-center table-bordered">
         <thead>
           <tr>
-            <th colspan="1" >Contenedor Acciones</th>
+            <th colspan="1">Contenedor Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of [1,2,3,4,5,6,7,8,9], let i=index">
-            <td scope="row">{{i+1}}</td>
+            <a (click)="numberOfUsers(i)">
+              <td scope="row">
+                {{i+1}}
+              </td>
+            </a>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="resultContainer">
-      <app-results></app-results>
+      <app-results [numberOfUsers]="messageForChild"></app-results>
     </div>
 
   </div>
-  
+
 </div>
