@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "finalPractice"
+    }
+  },
+  "defaultProject": "finalPractice",
+  "cli": {
+    "analytics": false
+  }
 }

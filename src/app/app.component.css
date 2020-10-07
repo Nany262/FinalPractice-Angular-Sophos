@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+.principal-container{
+    display: grid;
+    grid-template-rows: 10vh 80vh;
+}
+
+.body{
+    margin: 1%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.actionContainer{
+    margin-top: 0%;
+    margin-left: 10%;
+    margin-right: 1%;
+}
+
+.resultContainer{
+    margin-left: 1%;
+    margin-top: 0px;
+}
+
+h1{
+    margin-top: 10px;
+    text-align: center;
+}
